@@ -42,3 +42,9 @@ RUN mv ./kubectl /usr/local/bin/kubectl
 # Setup gcloud/gsutil
 RUN curl https://sdk.cloud.google.com | bash -s -- --disable-prompts
 RUN ~/google-cloud-sdk/bin/gcloud config set disable_usage_reporting true
+
+# Simulate Jenkins folder structure
+RUN mkdir ~/jenkins
+RUN mkdir ~/jenkins/workspace
+RUN mkdir ~/jenkins/workspace/local
+WORKDIR ~/jenkins/workspace/local
